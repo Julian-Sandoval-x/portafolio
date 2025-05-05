@@ -1,0 +1,26 @@
+{
+  "name": "portafolio",
+  "version": "1.0.0",
+  "description": "Portafolio Web",
+  "main": "gulpfile.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Julian-Sandoval-x/portafolio.git"
+  },
+  "author": "Julian Sandoval",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Julian-Sandoval-x/portafolio/issues"
+  },
+  "homepage": "https://github.com/Julian-Sandoval-x/portafolio#readme",
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-sass": "^6.0.1",
+    "gulp-terser": "^2.1.0",
+    "sass": "^1.87.0"
+  }
+}

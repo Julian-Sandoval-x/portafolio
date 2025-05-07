@@ -1,0 +1,57 @@
+@use "base/variables" as v;
+
+.navegacion {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  &--logo {
+    &--texto {
+      color: v.$blanco;
+      margin-left: 2rem;
+      font-weight: 700;
+      font-size: 3rem;
+      font-family: v.$fuente_titulos;
+
+      &:hover {
+        color: v.$secundario;
+        font-size: 3.5rem;
+        transition: all 0.3s ease-in-out;
+      }
+
+      &:not(:hover) {
+        color: v.$blanco;
+        font-size: 3rem;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+
+  &--menu {
+    &--lista {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.6rem;
+    }
+
+    &--enlace {
+      color: v.$blanco;
+      margin-left: 1.5rem;
+
+      &:hover {
+        color: v.$secundario;
+        font-size: 2rem;
+        transition: all 0.3s ease-in-out;
+      }
+
+      &:not(:hover) {
+        color: v.$blanco;
+        font-size: 1.8rem;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+}

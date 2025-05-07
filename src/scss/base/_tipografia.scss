@@ -1,0 +1,5 @@
+@use "base/variables" as v;
+h1,
+h2 {
+  font-family: v.$fuente_titulos;
+}

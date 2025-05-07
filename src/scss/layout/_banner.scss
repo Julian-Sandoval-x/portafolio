@@ -1,0 +1,168 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.banner {
+  @include m.contenedor-md;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  padding: 2rem 0;
+
+  &--texto {
+    &-bienvenida {
+      font-family: v.$fuente_subtitulos;
+      margin-bottom: 0.7rem;
+      font-weight: 400;
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid v.$secundario;
+      width: 0;
+      animation: typing 2.5s steps(16, end) forwards,
+        cursor-blink 0.7s step-end infinite, pause 1s 2.5s forwards,
+        erasing 2s steps(16, end) 3.5s forwards, loop 5.5s infinite 3.5s;
+    }
+
+    &-nombre {
+      font-family: v.$fuente_titulos;
+      font-size: 4rem;
+      font-weight: bold;
+      margin: 0;
+      margin-bottom: 1.2rem;
+    }
+
+    &-carrera {
+      color: v.$primario;
+      font-weight: 900;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &--iconos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  &--icono {
+    font-size: 2rem;
+    color: v.$blanco;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: v.$secundario;
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+  }
+
+  &--img {
+    max-width: 60rem;
+  }
+
+  &--texto-email {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    &--boton {
+      border-radius: 1.1rem 0 0 1.1rem;
+      padding: 0.7rem;
+      &:hover {
+        background-color: v.$blanco;
+        color: v.$fondo;
+        cursor: pointer;
+        transition: background-color 0.5s ease-in;
+        transition: color 0.5s ease-in-out;
+      }
+
+      &:not(:hover) {
+        transition: background-color 0.5s ease-in;
+        transition: color 0.5s ease-in-out;
+      }
+    }
+
+    &--boton,
+    &--input {
+      background-color: v.$fondo;
+      border: 1px solid v.$blanco;
+      margin-bottom: 1rem;
+      color: v.$blanco;
+    }
+  }
+
+  &--texto-email--input {
+    border-radius: 0 1.1rem 1.1rem 0;
+    width: 100%;
+    font-size: 2rem;
+    font-weight: 400;
+    padding: 0.75rem;
+    background-color: v.$fondo;
+    border: 1px solid v.$blanco;
+    margin-bottom: 1rem;
+    color: v.$blanco;
+    text-align: center;
+
+    &:focus {
+      outline: none;
+      border-color: v.$secundario;
+      box-shadow: 0 0 5px v.$secundario;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes erasing {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
+
+@keyframes cursor-blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: v.$primario;
+  }
+}
+
+@keyframes pause {
+  from,
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes loop {
+  0% {
+    width: 0;
+  }
+  45% {
+    width: 100%;
+  }
+  55% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}

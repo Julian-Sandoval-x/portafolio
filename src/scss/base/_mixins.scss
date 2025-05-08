@@ -19,19 +19,15 @@
 }
 
 @mixin contenedor-md {
-  @media (min-width: v.$tablet) {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 @mixin contenedor-sm {
-  @media (min-width: v.$tablet) {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 @mixin boton($bgColor, $colorTexto) {
@@ -64,16 +60,4 @@
   display: grid;
   gap: $espaciado;
   grid-template-columns: repeat($columnas, 1fr);
-}
-
-@mixin textoDegradado($color) {
-  background: linear-gradient(to right, $color 0%, lighten($color, 30%) 100%);
-  color: transparent;
-  background-clip: text;
-  text-align: center;
-  font-size: 7rem;
-
-  @include tablet {
-    font-size: 10rem;
-  }
 }

@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lekton:ital,wght@0,400;0,700;1,400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="build/css/app.css" />
+    <link rel="stylesheet" href="public/build/css/app.css" />
     <title>Portafolio Web</title>
   </head>
   <body>
@@ -155,7 +155,10 @@
         </div>
 
         <div class="banner--img">
-          <img src="/src/img/coding.svg" alt="Foto de persona codificando" />
+          <img
+            src="/src/img/svg/coding.svg"
+            alt="Foto de persona codificando"
+          />
         </div>
       </section>
 
@@ -180,6 +183,71 @@
           </p>
         </div>
       </section>
+
+      <section>
+        <h3 class="header-projectos">Projectos</h3>
+        <article class="projectos">
+          <div class="projectos--menu">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="projectos--contenedor--icono icon icon-tabler icons-tabler-outline icon-tabler-device-desktop"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M3 5a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-10z"
+              />
+              <path d="M7 20h10" />
+              <path d="M9 16v4" />
+              <path d="M15 16v4" />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="projectos--contenedor--icono icon icon-tabler icons-tabler-outline icon-tabler-device-ipad"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M18 3a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2z"
+              />
+              <path d="M9 18h6" />
+            </svg>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="projectos--contenedor--icono icon icon-tabler icons-tabler-outline icon-tabler-device-mobile"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M6 5a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2v-14z"
+              />
+              <path d="M11 4h2" />
+              <path d="M12 17v.01" />
+            </svg>
+          </div>
+
+          <div class="projectos--contenedor" id="projectos-contenedor"></div>
+          <div class="projectos--resumen"></div>
+        </article>
+      </section>
     </main>
+
+    <script src="public/build/js/projectos.js"></script>
   </body>
 </html>

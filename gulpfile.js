@@ -9,9 +9,12 @@ const webp = require("gulp-webp");
 
 const sass = gulpSass(dartSass);
 
+// Webpack
+const webpack = require("webpack-stream");
+
 const paths = {
   scss: "src/scss/**/*.scss",
-  js: "src/js/**/*.js",
+  js: "src/js/app.js",
   imagenes: "src/img/**/*",
 };
 
@@ -24,7 +27,27 @@ function css(done) {
 }
 
 function js(done) {
-  src(paths.js).pipe(terser()).pipe(dest("./public/build/js"));
+  src(paths.js)
+    .pipe(
+      webpack({
+        mode: "production",
+        entry: {
+          bundle: "./src/js/app.js",
+        },
+        output: {
+          filename: "app.js",
+        },
+        watch: true,
+      })
+    )
+    .pipe(
+      terser({
+        ecma: 2020,
+        module: true,
+        toplevel: true,
+      })
+    )
+    .pipe(dest("./public/build/js"));
   done();
 }
 
@@ -36,11 +59,12 @@ function imagenes() {
 
 function versionWebp(done) {
   const opciones = {
-    quality: 50,
+    quality: 70,
   };
-  return src("src/img/**/*.{png,jpg}")
+  return src("src/img/**/*.{png,jpg,jpeg}")
     .pipe(webp(opciones))
-    .pipe(dest("./public/build/img"));
+    .pipe(dest("./public/build/img"))
+    .pipe(notify({ message: "Imagen WebP creada: <%= file.relative %>" })); // Añadimos notificación para depurar
 
   done();
 }
@@ -48,22 +72,22 @@ function versionWebp(done) {
 function buildInitial(done) {
   css(done);
   js(done);
-  imagenes();
-  versionWebp();
+  // imagenes();
+  // versionWebp();
   done();
 }
 
 function dev() {
   watch(paths.scss, css);
   watch(paths.js, js);
-  watch(paths.imagenes, imagenes);
-  watch(paths.imagenes, versionWebp);
+  // watch(paths.imagenes, imagenes);
+  // watch(paths.imagenes, versionWebp);
 }
 
 exports.css = css;
 exports.js = js;
-exports.imagenes = imagenes;
-exports.versionWebp = versionWebp;
+// exports.imagenes = imagenes;
+// exports.versionWebp = versionWebp;
 exports.dev = series(buildInitial, dev); // Primero construye todo, luego inicia modo dev
 exports.default = series(buildInitial, dev); // Igual que dev
-exports.build = parallel(css, js, imagenes, versionWebp); // Para construir todo sin iniciar modo dev
+exports.build = parallel(css, js); // Para construir todo sin iniciar modo dev

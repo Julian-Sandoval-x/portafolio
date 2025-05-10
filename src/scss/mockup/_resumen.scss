@@ -1,0 +1,38 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.proyecto--resumen {
+  &-titulo {
+    font-family: v.$fuente_subtitulos;
+    font-size: 4rem;
+  }
+
+  &-texto {
+    font-family: v.$fuente_textos;
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+    text-align: justify;
+    color: v.$blanco;
+  }
+
+  &-tech {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &-icons {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &-icon {
+    margin-right: 1rem;
+    font-size: 2rem;
+  }
+
+  &-boton {
+    @include m.boton(v.$morado, v.$blanco);
+  }
+}

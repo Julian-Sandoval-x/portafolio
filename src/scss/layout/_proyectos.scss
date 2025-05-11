@@ -8,17 +8,22 @@
   margin-bottom: 5rem;
 }
 
-.proyectos {
+.proyectos--contenedor {
   @include m.tablet {
     display: grid;
     gap: v.$separacion;
-    width: 100%;
-    max-width: 120rem;
+    width: 95%;
+    max-width: 100rem;
     grid-template-columns: 1fr 6fr 4fr;
+    margin: 0 auto;
   }
-  &--menu {
+}
+
+.proyectos--menu {
+  @include m.tablet {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
   }
 }

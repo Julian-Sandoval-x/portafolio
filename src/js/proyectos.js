@@ -2,6 +2,7 @@ import { getIcon } from "./icons";
 
 let idProyecto = 1;
 let proyectoElement;
+let proyectoResumen = null;
 
 const proyectos = {
   1: {
@@ -19,37 +20,40 @@ const proyectos = {
 
   2: {
     titulo: "UpTask",
-    resumen: "",
+    resumen:
+      "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla eu faucibus risus, vitae accumsan massa. Vivamus in mauris ac tellus volutpat consequat. Vivamus vel arcu placerat, maximus nunc ut, porta sem. Proin at dui dictum, tempor tortor vel, euismod ipsum. Vestibulum dolor tortor, vulputate eget laoreet placerat, fringilla in nunc. Vestibulum sed lacus nisi. Praesent blandit venenatis libero nec ultrices. Ut vulputate tellus a arcu volutpat sodales. Praesent ex mauris, ullamcorper a elementum et, sollicitudin semper dui.",
     code: "https://github.com/Julian-Sandoval-x/upTask",
-    tech: [],
+    tech: ["html", "scss", "php", "mysql", "paypal"],
     img: {
-      phone: "",
-      tablet: "",
-      desktop: "",
+      phone: "/public/build/img/mockup/mcDWC-phone.webp",
+      tablet: "/public/build/img/mockup/mcDWC-tablet.webp",
+      desktop: "/public/build/img/mockup/mcDWC.webp",
     },
   },
 
   3: {
     titulo: "AppSalon",
-    resumen: "",
+    resumen:
+      "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla eu faucibus risus, vitae accumsan massa. Vivamus in mauris ac tellus volutpat consequat. Vivamus vel arcu placerat, maximus nunc ut, porta sem. Proin at dui dictum, tempor tortor vel, euismod ipsum. Vestibulum dolor tortor, vulputate eget laoreet placerat, fringilla in nunc. Vestibulum sed lacus nisi. Praesent blandit venenatis libero nec ultrices. Ut vulputate tellus a arcu volutpat sodales. Praesent ex mauris, ullamcorper a elementum et, sollicitudin semper dui.",
     code: "https://github.com/Julian-Sandoval-x/appSalon-mvc-php",
-    tech: [],
+    tech: ["html", "scss", "php", "mysql", "paypal"],
     img: {
-      phone: "",
-      tablet: "",
-      desktop: "",
+      phone: "/public/build/img/mockup/mcDWC-phone.webp",
+      tablet: "/public/build/img/mockup/mcDWC-tablet.webp",
+      desktop: "/public/build/img/mockup/mcDWC.webp",
     },
   },
 
   4: {
     titulo: "Bienes Raices",
-    resumen: "",
-    code: "",
-    tech: [],
+    resumen:
+      "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla eu faucibus risus, vitae accumsan massa. Vivamus in mauris ac tellus volutpat consequat. Vivamus vel arcu placerat, maximus nunc ut, porta sem. Proin at dui dictum, tempor tortor vel, euismod ipsum. Vestibulum dolor tortor, vulputate eget laoreet placerat, fringilla in nunc. Vestibulum sed lacus nisi. Praesent blandit venenatis libero nec ultrices. Ut vulputate tellus a arcu volutpat sodales. Praesent ex mauris, ullamcorper a elementum et, sollicitudin semper dui.",
+    code: "3",
+    tech: ["html", "scss", "php", "mysql", "paypal"],
     img: {
-      phone: "",
-      tablet: "",
-      desktop: "",
+      phone: "/public/build/img/mockup/mcDWC-phone.webp",
+      tablet: "/public/build/img/mockup/mcDWC-tablet.webp",
+      desktop: "/public/build/img/mockup/mcDWC.webp",
     },
   },
 };
@@ -62,12 +66,12 @@ function iniciarApp() {
   DOMProjectos();
 }
 
-function DOMProjectos() {
-  const contenedorResumen = document.querySelector(".proyectos");
+function DOMProjectos(idProyecto = 1) {
+  const contenedorProyecto = document.querySelector(".proyectos--contenedor");
   const contenedorImg = document.querySelector("#proyectos-mockup");
 
   // Limpiamos el contenedor
-  contenedorImg.innerHTML = "";
+  limpiarHTML();
 
   var proyecto = proyectos[idProyecto];
 
@@ -97,10 +101,12 @@ function DOMProjectos() {
   proyectoElement.rel = "preload";
 
   proyectoElement.as = "image";
-  // Informacion del proyecto
-  const proyectoResumen = document.createElement("DIV");
 
-  proyectoResumen.classList.add("proyectos--resumen");
+  // Informacion del proyecto
+  if (proyectoResumen === null) {
+    proyectoResumen = document.createElement("DIV");
+    proyectoResumen.classList.add("proyectos--resumen");
+  }
 
   // Titulo
   const titulo = document.createElement("H3");
@@ -145,7 +151,36 @@ function DOMProjectos() {
   // Agregamos al DOM
   contenedorImg.appendChild(proyectoElement);
 
-  contenedorResumen.appendChild(proyectoResumen);
+  contenedorProyecto.appendChild(proyectoResumen);
 }
 
-export { proyectoElement, proyectos, idProyecto };
+function limpiarHTML() {
+  const imgMockup = document.querySelector(".proyectos--mockup--img");
+  const contenedorTitulo = document.querySelector(".proyecto--resumen-titulo");
+  const contenedorResumen = document.querySelector(".proyecto--resumen-texto");
+  const contenedorTech = document.querySelector(".proyecto--resumen-tech");
+  const contenedorBoton = document.querySelector(".proyecto--resumen-boton");
+
+  // Limpiamos el contenedor de la imagen
+  if (imgMockup) {
+    imgMockup.remove();
+  }
+  // Limpiamos el contenedor del titulo
+  if (contenedorTitulo) {
+    contenedorTitulo.remove();
+  }
+  // Limpiamos el contenedor del resumen
+  if (contenedorResumen) {
+    contenedorResumen.remove();
+  }
+  // Limpiamos el contenedor de las tecnologias
+  if (contenedorTech) {
+    contenedorTech.remove();
+  }
+  // Limpiamos el contenedor del boton
+  if (contenedorBoton) {
+    contenedorBoton.remove();
+  }
+}
+
+export { proyectoElement, proyectos, idProyecto, DOMProjectos };

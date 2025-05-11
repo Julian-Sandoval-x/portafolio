@@ -619,18 +619,23 @@ h2 {
 }
 
 @media (min-width: 768px) {
-  .proyectos {
+  .proyectos--contenedor {
     display: grid;
     gap: 5rem;
-    width: 100%;
-    max-width: 120rem;
+    width: 95%;
+    max-width: 100rem;
     grid-template-columns: 1fr 6fr 4fr;
+    margin: 0 auto;
   }
 }
-.proyectos--menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+
+@media (min-width: 768px) {
+  .proyectos--menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .proyectos--mockup {

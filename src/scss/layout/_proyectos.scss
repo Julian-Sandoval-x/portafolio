@@ -5,25 +5,59 @@
   font-family: v.$fuente_titulos;
   font-size: 3.5rem;
   font-weight: 900;
-  margin-bottom: 5rem;
+  text-align: center;
 }
 
-.proyectos--contenedor {
+.proyectos {
+  display: flex;
+  flex-direction: column;
+
   @include m.tablet {
     display: grid;
+    grid-template-columns: 1fr 6fr;
     gap: v.$separacion;
     width: 95%;
     max-width: 100rem;
-    grid-template-columns: 1fr 6fr 4fr;
     margin: 0 auto;
   }
 }
 
 .proyectos--menu {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+
   @include m.tablet {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 0;
+  }
+}
+
+.swiper {
+  width: 100%;
+}
+
+.swiper-slide {
+  padding: 2rem 0;
+}
+
+.proyectos--contenedor {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+  @include m.tablet {
+    grid-template-columns: 1.5fr 1fr;
     align-items: center;
   }
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: v.$blanco;
+  font-weight: 400;
 }

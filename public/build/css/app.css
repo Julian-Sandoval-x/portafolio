@@ -615,27 +615,64 @@ h2 {
   font-family: "Lato", sans-serif;
   font-size: 3.5rem;
   font-weight: 900;
-  margin-bottom: 5rem;
+  text-align: center;
 }
 
+.proyectos {
+  display: flex;
+  flex-direction: column;
+}
 @media (min-width: 768px) {
-  .proyectos--contenedor {
+  .proyectos {
     display: grid;
+    grid-template-columns: 1fr 6fr;
     gap: 5rem;
     width: 95%;
     max-width: 100rem;
-    grid-template-columns: 1fr 6fr 4fr;
     margin: 0 auto;
   }
 }
 
+.proyectos--menu {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
 @media (min-width: 768px) {
   .proyectos--menu {
-    display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 0;
+  }
+}
+
+.swiper {
+  width: 100%;
+}
+
+.swiper-slide {
+  padding: 2rem 0;
+}
+
+.proyectos--contenedor {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  .proyectos--contenedor {
+    grid-template-columns: 1.5fr 1fr;
     align-items: center;
   }
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: #ffffff;
+  font-weight: 400;
 }
 
 .proyectos--mockup {
@@ -652,67 +689,16 @@ h2 {
 }
 @media (min-width: 768px) {
   .proyectos--mockup--img {
-    max-width: 50rem;
-    max-height: 50rem;
+    max-width: 45rem;
+    max-height: 45rem;
   }
 }
 @media (min-width: 768px) {
-  .proyectos--mockup--img--tablet {
-    max-width: 35rem;
-    max-height: 35rem;
-    margin-left: 7.5rem;
-    margin-top: 2rem;
-  }
-}
-@media (min-width: 768px) {
-  .proyectos--mockup--img--phone {
+  .proyectos--mockup--img-tablet, .proyectos--mockup--img-phone {
     max-width: 30rem;
-    max-height: 30rem;
-    margin-left: 7rem;
-    margin-top: 2rem;
+    max-height: 35rem;
+    margin: 0 0 6rem 12rem;
   }
-}
-
-@keyframes slideFromRight {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-@keyframes slideOutToLeft {
-  0% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-}
-@keyframes slideInFromRight {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-.slide-out {
-  animation: slideOutToLeft 0.4s ease forwards !important;
-}
-
-.slide-in {
-  animation: slideInFromRight 0.4s ease forwards !important;
-}
-
-.initial-load {
-  animation: slideFromRight 0.5s ease forwards;
 }
 
 .proyectos--menu--icono {

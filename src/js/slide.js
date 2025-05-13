@@ -1,61 +1,55 @@
 import Swiper from "swiper";
-import { Navigation } from "swiper/modules";
-import { idProyecto, DOMProjectos, proyectos } from "./proyectos";
+import {
+  Navigation,
+  Pagination,
+  EffectFade,
+  Autoplay,
+  Keyboard,
+} from "swiper/modules";
+import { cambiarMockup } from "./proyectos";
 
 document.addEventListener("DOMContentLoaded", () => {
-  if (document.querySelector(".swiper")) {
-    const opciones = {
-      slidePerView: 1,
-      spaceBetween: 10,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+  const contenedorSwiper = document.querySelector(".swiper");
+  if (!contenedorSwiper) return;
+
+  Swiper.use([Navigation, Pagination, EffectFade, Autoplay, Keyboard]);
+
+  const swiper = new Swiper(".swiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    speed: 800,
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    keyboard: {
+      enabled: true,
+      onlyInViewport: false,
+    },
+    grabCursor: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
+    loop: true,
+    on: {
+      slideChangeTransitionStart: function () {
+        const activeButton = document.querySelector(
+          ".proyectos--menu--icono.active"
+        );
+        if (activeButton) {
+          const tipo = activeButton.attributes["data-device"].value;
+          cambiarMockup(tipo);
+        }
       },
-      breakpoints: {
-        768: {
-          slidePerView: 2,
-        },
-        1024: {
-          slidePerView: 3,
-        },
-        1200: {
-          slidePerView: 4,
-        },
-      },
-    };
-    Swiper.use([Navigation]);
-    new Swiper(".swiper", opciones);
-  }
-});
-
-// // Add event listeners to the buttons
-const prevButton = document.querySelector(".swiper-button-prev");
-const nextButton = document.querySelector(".swiper-button-next");
-
-prevButton.addEventListener("click", () => {
-  console.log("Previous button clicked");
-  if (idProyecto === 1) {
-    idProyecto = Object.values(proyectos).length;
-    DOMProjectos(idProyecto);
-    return;
-  }
-
-  console.log(idProyecto);
-  console.log(proyectos.length);
-  idProyecto--;
-  DOMProjectos(idProyecto);
-});
-
-nextButton.addEventListener("click", () => {
-  console.log("Next button clicked");
-  if (idProyecto === Object.values(proyectos).length) {
-    idProyecto = 1;
-    DOMProjectos(idProyecto);
-    return;
-  }
-
-  console.log(idProyecto);
-  console.log(Object.values(proyectos).length);
-  idProyecto++;
-  DOMProjectos(idProyecto);
+    },
+  });
 });

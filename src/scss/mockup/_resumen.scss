@@ -33,6 +33,28 @@
   }
 
   &-boton {
-    @include m.boton(v.$morado, v.$blanco);
+    padding: 1rem 3rem;
+    border-radius: 1rem;
+    color: v.$blanco;
+    text-align: center;
+    margin-right: 1rem;
+
+    & > div {
+      margin: 0;
+    }
+
+    &:hover {
+      // background-color: v.$secundario;
+      box-shadow: 0px -15px 28px -3px rgba(190, 107, 255, 0.74) inset;
+      -webkit-box-shadow: 0px -15px 28px -3px rgba(190, 107, 255, 0.74) inset;
+      -moz-box-shadow: 0px -15px 28px -3px rgba(190, 107, 255, 0.74) inset;
+      transition: all 0.3s ease-in-out;
+      transform: scale(1.05);
+    }
+
+    &:not(:hover) {
+      transition: all 0.3s ease-in-out;
+      transform: scale(1);
+    }
   }
 }

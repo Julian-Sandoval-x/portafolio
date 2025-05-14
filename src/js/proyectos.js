@@ -1,4 +1,5 @@
 import { getIcon } from "./icons";
+import { menuFlotante, seccionActual, mensajeCopiado } from "./navegacion";
 
 let idProyecto = 1;
 
@@ -179,20 +180,21 @@ function generarSlides() {
     });
 
     // Creamos el boton para obtener el codigo
-    const url = document.createElement("A");
+    const codigo = document.createElement("A");
     if (proyecto.code) {
-      const boton = document.createElement("BUTTON");
-      url.href = proyecto.code;
-      url.target = "_blank";
-      url.rel = "noopener noreferrer";
-      boton.classList.add("proyecto--resumen-boton");
-      boton.textContent = "code";
-      url.appendChild(boton);
+      const svgGithub = document.createElement("DIV");
+      svgGithub.classList.add("proyecto--resumen-icon");
+      svgGithub.innerHTML = getIcon("github");
+      codigo.href = proyecto.code;
+      codigo.target = "_blank";
+      codigo.rel = "noopener noreferrer";
+      codigo.classList.add("proyecto--resumen-boton");
+      codigo.appendChild(svgGithub);
     }
 
     // Agregamos el contenedor de las tecnologias al contenedor del resumen
     contenedorTech.appendChild(icons);
-    contenedorTech.appendChild(url);
+    contenedorTech.appendChild(codigo);
 
     // Agregamos el titulo, resumen y contenedor de las tecnologias al contenedor del resumen
     contenedorResumen.appendChild(titulo);
@@ -251,7 +253,10 @@ function cambiarMockup(tipo) {
 }
 
 function InicializarProyectos() {
+  menuFlotante();
   generarSlides();
+  seccionActual();
+  mensajeCopiado();
 
   // Configuramos los botones del menu de dispositivos
   const botonesMockup = document.querySelectorAll(".proyectos--menu--icono");

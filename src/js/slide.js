@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     grabCursor: true,
     autoplay: {
-      delay: 5000,
+      delay: 10000,
       disableOnInteraction: false,
     },
     loop: true,

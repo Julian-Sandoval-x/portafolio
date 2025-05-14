@@ -2,12 +2,17 @@
 @use "base/mixins" as m;
 
 .banner {
-  @include m.contenedor-md;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: row;
-  padding: 2rem 0;
+  flex-direction: column;
+  padding: 1rem 0;
+  gap: 3rem;
+
+  @include m.tablet {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    padding: 2rem 0;
+  }
 
   &--texto {
     &-bienvenida {
@@ -42,6 +47,11 @@
   }
 
   &--iconos {
+    justify-content: center;
+
+    @include m.tablet {
+      justify-content: start;
+    }
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -97,11 +107,22 @@
   }
 
   &--texto-email--input {
+    @include m.telefono {
+      font-size: 1.3rem;
+      padding: 1.2rem;
+    }
+
+    @include m.tablet {
+      padding: 1.15rem;
+    }
+
+    @include m.desktop {
+      font-size: 2rem;
+      padding: 0.75rem;
+    }
     border-radius: 0 1.1rem 1.1rem 0;
     width: 100%;
-    font-size: 2rem;
     font-weight: 400;
-    padding: 0.75rem;
     background-color: v.$fondo;
     border: 1px solid v.$blanco;
     margin-bottom: 1rem;
@@ -114,6 +135,45 @@
       box-shadow: 0 0 5px v.$secundario;
       transition: all 0.3s ease-in-out;
     }
+  }
+}
+
+.banner--texto-email {
+  &--input {
+    transition: opacity 0.3s ease, transform 0.3s ease, transform 0.3s ease,
+      background-color 0.3s ease;
+
+    &.email--fade-out {
+      opacity: 0;
+      transform: translateY(-1rem);
+    }
+
+    &.email--fade-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &.email--copiado {
+      background-color: v.$primario;
+      color: v.$blanco;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}
+
+.btn-copiado {
+  animation: pulse 0.5s ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 

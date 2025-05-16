@@ -196,14 +196,18 @@
       </section>
 
       <section class="sobre-mi" id="sobre-mi">
-        <img
-          src="/build/img/profile.jpg"
-          alt="Foto de perfil"
-          loading="lazy"
-          class="sobre-mi--img"
-          width="300"
-          height="300"
-        />
+        <picture>
+          <source srcset="/build/img/profile.webp" type="image/webp" />
+          <img
+            src="/build/img/profile.jpg"
+            alt="Foto de perfil"
+            loading="lazy"
+            class="sobre-mi--img"
+            width="300"
+            height="300"
+          />
+        </picture>
+
         <div class="sobre-mi--texto">
           <h3 class="sobre-mi--texto--subtitulo">¿Quien Soy?</h3>
           <h2 class="sobre-mi--texto--titulo">Hola</h2>

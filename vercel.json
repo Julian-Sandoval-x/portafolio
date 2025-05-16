@@ -10,13 +10,8 @@
   }
   ],
   "rewrites": [
-    { "handle": "filesystem" },
     { "src": "/(.*)", "dest": "/index.html" }
   ],
-  "images": {
-    "sizes": [640, 1280, 1920],
-    "minimumCacheTTL": 60
-  },
   "headers": [
     {
     "source": "/(.*)",

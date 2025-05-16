@@ -10833,16 +10833,16 @@ const proyectos = {
     tech: ["html", "scss", "php", "js", "mysql", "paypal"],
     img: {
       phone: {
-        webp: "/public/build/img/mockup/dwc/mcDWC-phone.webp",
-        png: "/public/build/img/mockup/dwc/mcDWC-phone.png",
+        webp: "/build/img/mockup/dwc/mcDWC-phone.webp",
+        png: "/build/img/mockup/dwc/mcDWC-phone.png",
       },
       tablet: {
-        webp: "/public/build/img/mockup/dwc/mcDWC-tablet.webp",
-        png: "/public/build/img/mockup/dwc/mcDWC-tablet.png",
+        webp: "/build/img/mockup/dwc/mcDWC-tablet.webp",
+        png: "/build/img/mockup/dwc/mcDWC-tablet.png",
       },
       desktop: {
-        webp: "/public/build/img/mockup/dwc/mcDWC.webp",
-        png: "/public/build/img/mockup/dwc/mcDWC.png",
+        webp: "/build/img/mockup/dwc/mcDWC.webp",
+        png: "/build/img/mockup/dwc/mcDWC.png",
       },
     },
   },
@@ -10856,16 +10856,16 @@ const proyectos = {
     tech: ["html", "scss", "php", "js", "mysql"],
     img: {
       phone: {
-        webp: "/public/build/img/mockup/uptask/mcUptask-phone.webp",
-        png: "/public/build/img/mockup/uptask/mcUptask-phone.png",
+        webp: "/build/img/mockup/uptask/mcUptask-phone.webp",
+        png: "/build/img/mockup/uptask/mcUptask-phone.png",
       },
       tablet: {
-        webp: "/public/build/img/mockup/uptask/mcUptask-tablet.webp",
-        png: "/public/build/img/mockup/uptask/mcUptask-tablet.png",
+        webp: "/build/img/mockup/uptask/mcUptask-tablet.webp",
+        png: "/build/img/mockup/uptask/mcUptask-tablet.png",
       },
       desktop: {
-        webp: "/public/build/img/mockup/uptask/mcUptask.webp",
-        png: "/public/build/img/mockup/uptask/mcUptask.png",
+        webp: "/build/img/mockup/uptask/mcUptask.webp",
+        png: "/build/img/mockup/uptask/mcUptask.png",
       },
     },
   },
@@ -10879,16 +10879,16 @@ const proyectos = {
     tech: ["html", "scss", "php", "js", "mysql"],
     img: {
       phone: {
-        webp: "/public/build/img/mockup/appsalon/mcAppSalon-phone.webp",
-        png: "/public/build/img/mockup/appsalon/mcAppSalon-phone.png",
+        webp: "/build/img/mockup/appsalon/mcAppSalon-phone.webp",
+        png: "/build/img/mockup/appsalon/mcAppSalon-phone.png",
       },
       tablet: {
-        webp: "/public/build/img/mockup/appsalon/mcAppSalon-tablet.webp",
-        png: "/public/build/img/mockup/appsalon/mcAppSalon-tablet.png",
+        webp: "/build/img/mockup/appsalon/mcAppSalon-tablet.webp",
+        png: "/build/img/mockup/appsalon/mcAppSalon-tablet.png",
       },
       desktop: {
-        webp: "/public/build/img/mockup/appsalon/mcAppSalon.webp",
-        png: "/public/build/img/mockup/appsalon/mcAppSalon.png",
+        webp: "/build/img/mockup/appsalon/mcAppSalon.webp",
+        png: "/build/img/mockup/appsalon/mcAppSalon.png",
       },
     },
   },
@@ -10902,16 +10902,16 @@ const proyectos = {
     tech: ["html", "scss", "php", "js", "mysql"],
     img: {
       phone: {
-        webp: "/public/build/img/mockup/bienes/mcBR-phone.webp",
-        png: "/public/build/img/mockup/bienes/mcBR-phone.png",
+        webp: "/build/img/mockup/bienes/mcBR-phone.webp",
+        png: "/build/img/mockup/bienes/mcBR-phone.png",
       },
       tablet: {
-        webp: "/public/build/img/mockup/bienes/mcBR-tablet.webp",
-        png: "/public/build/img/mockup/bienes/mcBR-tablet.png",
+        webp: "/build/img/mockup/bienes/mcBR-tablet.webp",
+        png: "/build/img/mockup/bienes/mcBR-tablet.png",
       },
       desktop: {
-        webp: "/public/build/img/mockup/bienes/mcBR.webp",
-        png: "/public/build/img/mockup/bienes/mcBR.png",
+        webp: "/build/img/mockup/bienes/mcBR.webp",
+        png: "/build/img/mockup/bienes/mcBR.png",
       },
     },
   },

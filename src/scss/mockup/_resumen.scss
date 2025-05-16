@@ -17,14 +17,19 @@
   }
 
   &-tech {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    margin-bottom: 2rem;
+    @include m.tablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   &-icons {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    margin-bottom: 2rem;
   }
 
   &-icon {
@@ -38,23 +43,33 @@
     color: v.$blanco;
     text-align: center;
     margin-right: 1rem;
+    @include m.sombra-inset-phone(v.$morado);
+
+    &-wrap {
+      display: flex;
+      justify-content: center;
+    }
 
     & > div {
       margin: 0;
     }
 
-    &:hover {
-      // background-color: v.$secundario;
-      box-shadow: 0px -15px 28px -3px rgba(190, 107, 255, 0.74) inset;
-      -webkit-box-shadow: 0px -15px 28px -3px rgba(190, 107, 255, 0.74) inset;
-      -moz-box-shadow: 0px -15px 28px -3px rgba(190, 107, 255, 0.74) inset;
-      transition: all 0.3s ease-in-out;
-      transform: scale(1.05);
+    @include m.tablet {
+      box-shadow: unset;
+      -webkit-box-shadow: unset;
+      -moz-box-shadow: unset;
+      @include m.sombra-inset(v.$morado);
     }
+  }
+}
 
-    &:not(:hover) {
-      transition: all 0.3s ease-in-out;
-      transform: scale(1);
-    }
+.proyecto--resumen-boton--enlace {
+  @include m.sombra-inset-phone(v.$terciaro);
+
+  @include m.tablet {
+    box-shadow: unset;
+    -webkit-box-shadow: unset;
+    -moz-box-shadow: unset;
+    @include m.sombra-inset(v.$terciaro);
   }
 }

@@ -79,6 +79,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    margin-bottom: 1rem;
 
     &--boton {
       border-radius: 1.1rem 0 0 1.1rem;
@@ -105,8 +106,13 @@
       color: v.$blanco;
     }
   }
+}
 
-  &--texto-email--input {
+.banner--texto-email {
+  &--input {
+    transition: opacity 0.3s ease, transform 0.3s ease, transform 0.3s ease,
+      background-color 0.3s ease;
+
     @include m.telefono {
       font-size: 1.3rem;
       padding: 1.2rem;
@@ -135,13 +141,6 @@
       box-shadow: 0 0 5px v.$secundario;
       transition: all 0.3s ease-in-out;
     }
-  }
-}
-
-.banner--texto-email {
-  &--input {
-    transition: opacity 0.3s ease, transform 0.3s ease, transform 0.3s ease,
-      background-color 0.3s ease;
 
     &.email--fade-out {
       opacity: 0;

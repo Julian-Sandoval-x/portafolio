@@ -49,7 +49,6 @@ function mensajeCopiado() {
         email = document.querySelector(".banner--texto-email--input");
       }
 
-      console.log(email);
       // const email = document.querySelector("");
       const emailTexto = email.value;
       navigator.clipboard

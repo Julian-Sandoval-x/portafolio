@@ -1,15 +1,14 @@
 import { getIcon } from "./icons";
 import { menuFlotante, seccionActual, mensajeCopiado } from "./navegacion";
 
-let idProyecto = 1;
-
 const proyectos = {
   0: {
     titulo: "DevWebCamp",
     resumen:
-      "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla eu faucibus risus, vitae accumsan massa. Vivamus in mauris ac tellus volutpat consequat. Vivamus vel arcu placerat, maximus nunc ut, porta sem. Proin at dui dictum, tempor tortor vel, euismod ipsum. Vestibulum dolor tortor, vulputate eget laoreet placerat, fringilla in nunc. Vestibulum sed lacus nisi. Praesent blandit venenatis libero nec ultrices. Ut vulputate tellus a arcu volutpat sodales. Praesent ex mauris, ullamcorper a elementum et, sollicitudin semper dui.",
+      "Aplicación web desarrollada con PHP y JavaScript bajo el patrón MVC, orientada a la gestión de conferencias y eventos tecnológicos. Incluye funcionalidades como registro y autenticación de usuarios, administración de ponentes y conferencias, inscripciones, panel de control y manejo de sesiones. El proyecto utiliza SCSS para estilos, Gulp para tareas automatizadas y Composer para la gestión de dependencias. Estructurado siguiendo buenas prácticas y organización modular del código.",
     code: "https://github.com/Julian-Sandoval-x/devwebcamp",
-    tech: ["html", "scss", "php", "mysql", "paypal"],
+    site: "",
+    tech: ["html", "scss", "php", "js", "mysql", "paypal"],
     img: {
       phone: {
         webp: "/public/build/img/mockup/dwc/mcDWC-phone.webp",
@@ -29,9 +28,10 @@ const proyectos = {
   1: {
     titulo: "UpTask",
     resumen:
-      "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla eu faucibus risus, vitae accumsan massa. Vivamus in mauris ac tellus volutpat consequat. Vivamus vel arcu placerat, maximus nunc ut, porta sem. Proin at dui dictum, tempor tortor vel, euismod ipsum. Vestibulum dolor tortor, vulputate eget laoreet placerat, fringilla in nunc. Vestibulum sed lacus nisi. Praesent blandit venenatis libero nec ultrices. Ut vulputate tellus a arcu volutpat sodales. Praesent ex mauris, ullamcorper a elementum et, sollicitudin semper dui.",
+      "Aplicación web desarrollada con PHP, JavaScript y SCSS, siguiendo el patrón de arquitectura MVC. UpTask permite a los usuarios gestionar tareas y proyectos de manera eficiente, ofreciendo funcionalidades como autenticación de usuarios, creación y edición de tareas, y organización por proyectos. El proyecto utiliza MySQL para la gestión de bases de datos, Gulp para la automatización de tareas y Composer para el manejo de dependencias. La interfaz está diseñada para ser intuitiva y responsiva, asegurando una experiencia de usuario óptima.",
     code: "https://github.com/Julian-Sandoval-x/upTask",
-    tech: ["html", "scss", "php", "mysql", "paypal"],
+    site: "https://uptask-mvc-php-sandoval.mnz.dom.my.id",
+    tech: ["html", "scss", "php", "js", "mysql"],
     img: {
       phone: {
         webp: "/public/build/img/mockup/uptask/mcUptask-phone.webp",
@@ -51,9 +51,10 @@ const proyectos = {
   2: {
     titulo: "AppSalon",
     resumen:
-      "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla eu faucibus risus, vitae accumsan massa. Vivamus in mauris ac tellus volutpat consequat. Vivamus vel arcu placerat, maximus nunc ut, porta sem. Proin at dui dictum, tempor tortor vel, euismod ipsum. Vestibulum dolor tortor, vulputate eget laoreet placerat, fringilla in nunc. Vestibulum sed lacus nisi. Praesent blandit venenatis libero nec ultrices. Ut vulputate tellus a arcu volutpat sodales. Praesent ex mauris, ullamcorper a elementum et, sollicitudin semper dui.",
+      "Aplicación web desarrollada con PHP, JavaScript y SCSS, siguiendo el patrón de arquitectura MVC. AppSalon permite a los usuarios agendar citas en un salón de belleza, ofreciendo funcionalidades como autenticación de usuarios, gestión de servicios y programación de citas. El proyecto utiliza Gulp para la automatización de tareas y Composer para la gestión de dependencias. La interfaz está diseñada para ser intuitiva y responsiva, asegurando una experiencia de usuario óptima.",
     code: "https://github.com/Julian-Sandoval-x/appSalon-mvc-php",
-    tech: ["html", "scss", "php", "mysql", "paypal"],
+    site: "https://appsalon-php-mvc-sandovaljulian.mnz.dom.my.id",
+    tech: ["html", "scss", "php", "js", "mysql"],
     img: {
       phone: {
         webp: "/public/build/img/mockup/appsalon/mcAppSalon-phone.webp",
@@ -73,9 +74,10 @@ const proyectos = {
   3: {
     titulo: "Bienes Raices",
     resumen:
-      "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla eu faucibus risus, vitae accumsan massa. Vivamus in mauris ac tellus volutpat consequat. Vivamus vel arcu placerat, maximus nunc ut, porta sem. Proin at dui dictum, tempor tortor vel, euismod ipsum. Vestibulum dolor tortor, vulputate eget laoreet placerat, fringilla in nunc. Vestibulum sed lacus nisi. Praesent blandit venenatis libero nec ultrices. Ut vulputate tellus a arcu volutpat sodales. Praesent ex mauris, ullamcorper a elementum et, sollicitudin semper dui.",
+      "Plataforma web orientada a la gestión de propiedades inmobiliarias, desarrollada con PHP, JavaScript y SCSS bajo el patrón MVC. Permite a los usuarios publicar, editar y eliminar anuncios de propiedades, así como gestionar imágenes asociadas. El proyecto emplea Gulp para la automatización de tareas y Composer para la gestión de dependencias. La interfaz está optimizada para ofrecer una experiencia de usuario fluida y responsiva.",
     code: "https://github.com/Julian-Sandoval-x/bienesRaices",
-    tech: ["html", "scss", "php", "mysql", "paypal"],
+    site: "",
+    tech: ["html", "scss", "php", "js", "mysql"],
     img: {
       phone: {
         webp: "/public/build/img/mockup/bienes/mcBR-phone.webp",
@@ -169,7 +171,7 @@ function generarSlides() {
     const contenedorTech = document.createElement("DIV");
     contenedorTech.classList.add("proyecto--resumen-tech");
     const icons = document.createElement("DIV");
-    icons.classList.add("proyecto-resumen-icons");
+    icons.classList.add("proyecto--resumen-icons");
 
     // Agregamos el svg de las tecnologias
     proyecto.tech.forEach((tech) => {
@@ -180,21 +182,32 @@ function generarSlides() {
     });
 
     // Creamos el boton para obtener el codigo
+    const codigoWrap = document.createElement("DIV");
+    codigoWrap.classList.add("proyecto--resumen-boton-wrap");
     const codigo = document.createElement("A");
+    const site = document.createElement("A");
     if (proyecto.code) {
-      const svgGithub = document.createElement("DIV");
-      svgGithub.classList.add("proyecto--resumen-icon");
-      svgGithub.innerHTML = getIcon("github");
-      codigo.href = proyecto.code;
-      codigo.target = "_blank";
-      codigo.rel = "noopener noreferrer";
-      codigo.classList.add("proyecto--resumen-boton");
-      codigo.appendChild(svgGithub);
+      generarEnlaces(codigo, "github", proyecto);
+    }
+
+    if (proyecto.site) {
+      generarEnlaces(site, "enlace", proyecto, true);
     }
 
     // Agregamos el contenedor de las tecnologias al contenedor del resumen
     contenedorTech.appendChild(icons);
-    contenedorTech.appendChild(codigo);
+
+    // Agregamos el boton de codigo y el de sitio al contenedor de las tecnologias
+    if (proyecto.code) {
+      codigoWrap.appendChild(codigo);
+    }
+
+    if (proyecto.site) {
+      site.classList.add("proyecto--resumen-boton--enlace");
+      codigoWrap.appendChild(site);
+    }
+
+    contenedorTech.appendChild(codigoWrap);
 
     // Agregamos el titulo, resumen y contenedor de las tecnologias al contenedor del resumen
     contenedorResumen.appendChild(titulo);
@@ -275,6 +288,22 @@ function InicializarProyectos() {
       cambiarMockup(tipo);
     });
   });
+}
+
+function generarEnlaces(node, icon, proyecto, site = false) {
+  const svg = document.createElement("DIV");
+  svg.classList.add("proyecto--resumen-icon");
+  svg.innerHTML = getIcon(icon);
+  if (site) {
+    node.href = proyecto.site;
+  } else {
+    node.href = proyecto.code;
+  }
+  // node.href = proyecto.code;
+  node.target = "_blank";
+  node.rel = "noopener noreferrer";
+  node.classList.add("proyecto--resumen-boton");
+  node.appendChild(svg);
 }
 
 export { cambiarMockup };

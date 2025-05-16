@@ -1,21 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/build/img/svg/user-code.svg" />
     <!--Fuentes-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Optimizar a solo los pesos que usas -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lekton:ital,wght@0,400;0,700;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lato:wght@400;700&family=Lekton:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="public/build/css/app.css" />
-    <title>Portafolio Web</title>
+    <link rel="preload" href="/build/css/app.css" as="style" />
+    <link rel="stylesheet" href="/build/css/app.css" />
+    <title>Julian Sandoval | Developer</title>
+    <meta name="description" content="Portafolio de Julian Sandoval" />
+    <meta
+      name="keywords"
+      content="desarrollador web, frontend, backend, php, javascript, portafolio"
+    />
   </head>
   <body>
     <header id="header">
@@ -58,6 +66,7 @@
 
           <div class="banner--texto-email">
             <button
+              aria-label="Copiar Email"
               class="banner--texto-email--boton"
               type="button"
               id="btn-copiar"
@@ -92,11 +101,15 @@
           </div>
 
           <div class="banner--iconos">
-            <a class="banner--icono" href="#"
+            <a
+              class="banner--icono"
+              href="/build/docs/CV_Julian_Sandoval_Sistemas.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
+                width="32"
+                height="32"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -122,8 +135,8 @@
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
+                width="32"
+                height="32"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -147,8 +160,8 @@
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
+                width="32"
+                height="32"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -173,30 +186,40 @@
 
         <div class="banner--img">
           <img
-            src="/public/build/img/svg/coding.svg"
+            src="/build/img/svg/coding.svg"
             alt="Foto de persona codificando"
+            loading="lazy"
+            width="600"
+            height="400"
           />
         </div>
       </section>
 
       <section class="sobre-mi" id="sobre-mi">
         <img
-          src="./public/build/img/react.webp"
+          src="/build/img/profile.jpg"
           alt="Foto de perfil"
+          loading="lazy"
           class="sobre-mi--img"
+          width="300"
+          height="300"
         />
         <div class="sobre-mi--texto">
           <h3 class="sobre-mi--texto--subtitulo">¿Quien Soy?</h3>
           <h2 class="sobre-mi--texto--titulo">Hola</h2>
           <p class="sobre-mi--texto--parrafo">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum,
-            reprehenderit perspiciatis aliquid labore officia velit ab
-            voluptatum ad aperiam non a cupiditate maxime accusamus. Enim
-            officia accusantium impedit magni. Qui! Lorem ipsum dolor sit amet,
-            consectetur adipisicing elit. Earum, reprehenderit perspiciatis
-            aliquid labore officia velit ab voluptatum ad aperiam non a
-            cupiditate maxime accusamus. Enim officia accusantium impedit magni.
-            Qui!
+            Estudiante de octavo semestre de Ingeniería en Sistemas
+            Computacionales con enfoque en desarrollo web full stack. Cuento con
+            experiencia en la implementación de soluciones backend utilizando
+            Node.js, Express y bases de datos relacionales como MySQL, así como
+            en el diseño de interfaces utilizando SASS e implementando poco a
+            poco Tailwind CSS. He desarrollado proyectos académicos y personales
+            siguiendo buenas prácticas de programación, control de versiones con
+            Git y despliegue en entornos como Railway y Netlify. He desarrollado
+            APIs RESTful, optimizar consultas SQL y trabajar en entornos
+            colaborativos bajo metodologías ágiles. Busco integrarme a equipos
+            de desarrollo donde pueda aportar valor desde el primer día y seguir
+            fortaleciendo mis habilidades técnicas.
           </p>
         </div>
       </section>
@@ -389,7 +412,7 @@
             <button
               class="banner--texto-email--boton"
               type="button"
-              id="btn-copiar"
+              id="btn-copiar--footer"
               data-location="footer"
             >
               <svg
@@ -501,6 +524,7 @@
         </div>
       </footer>
     </main>
-    <script type="module" src="public/build/js/app.js"></script>
+    <script type="module" src="/build/js/app.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
   </body>
 </html>
